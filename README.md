@@ -14,3 +14,13 @@
 ## 4.1.4 inner class, nested class
 - 중첩 클래스 : 기본은 자바 static 중첩 클래스와 같음.
 - 내부 클래스 : inner 변경자
+
+## 4.3.1 Any, Unit
+- Any : The root of the Kotlin class hierarchy. Every Kotlin class has Any as a superclass. 모든 클래스의 최상위 class
+- Unit : The type with only one value: the Unit object. This type corresponds to the void type in Java.
+
+## 4.3.2 data class
+- getter, setter 구현 필요 X
+- 불변성 : 모든 property 읽기 전용으로 만들어서 데이터 클래스를 immutable class로 만들기를 .
+
+## 4.3.3 클래스 위임
