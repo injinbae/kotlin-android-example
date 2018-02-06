@@ -1,22 +1,17 @@
-package com.ijb.nbt.firstkotlinproj.data
+package com.ijb.nbt.kotlinchapter4.data
 
-/**
- * Created by bae injin on 2018. 1. 28..
- */
 data class UserProfile(val name: String?, val email: String?) {
-
     fun valid() = !name.isNullOrEmpty() && !email.isNullOrEmpty()
+}
 
-    // TODO : data class 구현
-    override fun equals(other: Any?): Boolean {
-        return super.equals(other)
-    }
+data class UserProfileList(val name: String, val email: String,
+                           val dailyNewUser: List<UserProfile>) {
 
-    override fun hashCode(): Int {
-        return super.hashCode()
-    }
+    /**
+     * custom getter
+     */
+    val size: Int
+        get() = dailyNewUser.size
 
-    override fun toString(): String {
-        return super.toString()
-    }
+    operator fun get(position: Int) = dailyNewUser[position]
 }

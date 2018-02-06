@@ -1,5 +1,8 @@
 package com.ijb.nbt.firstkotlinproj.data
 
+import android.content.Context
+import com.ijb.nbt.firstkotlinproj.MainApplication
+
 /**
  * primary constructor에는 코드 포함 불가, 초기화 코드는 init block으로 시작
  * primary constructor : class 정의와 동시에, class name 바로 뒤에 선언 , constructor keyword 생략 가능
@@ -8,6 +11,8 @@ package com.ijb.nbt.firstkotlinproj.data
 open class Ad constructor(val adId: Int) {
 
     var adType: Int = AD_CPC
+    val context: Context = MainApplication.Ctx.applicationContext()
+
     constructor(adId: Int, adType: Int) : this(adId) {
         this.adType = adType
     }

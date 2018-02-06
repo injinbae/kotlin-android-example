@@ -1,7 +1,7 @@
 package com.ijb.nbt.firstkotlinproj
 
-import android.support.multidex.MultiDexApplication
 import android.content.Context
+import android.support.multidex.MultiDexApplication
 
 /**
  * Created by bae injin on 2018. 1. 29..
@@ -13,10 +13,10 @@ class MainApplication : MultiDexApplication() {
     }
 
     /**
-     * 동반 객체 : 일반 객체처럼 사용하는 경우
-     * MainApplication.applicationContext 로 호출
+     * 동반 객체 : 일반 객체처럼 사용하는 경우.
+     * 동반 객체 안에 확장 함수와 프로퍼티를 정의할 수 있다.
      */
-    companion object {
+    companion object Ctx {
         private var instance: MainApplication? = null
         fun applicationContext(): Context {
             return instance!!.applicationContext

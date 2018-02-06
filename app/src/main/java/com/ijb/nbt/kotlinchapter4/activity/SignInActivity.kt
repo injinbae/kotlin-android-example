@@ -8,9 +8,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.ijb.nbt.firstkotlinproj.data.UserProfile
-import com.ijb.nbt.firstkotlinproj.helper.validateWith
 import com.ijb.nbt.kotlinchapter4.R
+import com.ijb.nbt.kotlinchapter4.data.UserProfile
+import com.ijb.nbt.kotlinchapter4.helper.saveUserProfile
+import com.ijb.nbt.kotlinchapter4.helper.validateWith
 import com.ijb.nbt.kotlinchapter4.widget.TextWatcherAdapter
 import kotlinx.android.synthetic.main.activity_signin.*
 
@@ -41,6 +42,7 @@ class SignInActivity : BaseActivity() {
          *
          * by : 클래스 위임. 상속을 허용하지 않는 클래스에 새로운 동작을 추가할 때 유용
          * 일부 동작을 변경하고 싶은 메서드만 override
+         * delegation : 클래스(메서드) 위임, 프로퍼티 위임
          */
         val textWatcher = object : TextWatcher by TextWatcherAdapter {
 
@@ -63,7 +65,9 @@ class SignInActivity : BaseActivity() {
             // TODO
             if (mEntryValid) {
                 // UserProfile 저장
-
+                userProfile = UserProfile(name = mUserNameEditText.text?.toString(),
+                        email = mUserEmailEditText.text?.toString())
+                saveUserProfile(userProfile)
             } else {
                 Toast.makeText(this@SignInActivity,
                         "사용자 정보를 다시 입력해주세요",
