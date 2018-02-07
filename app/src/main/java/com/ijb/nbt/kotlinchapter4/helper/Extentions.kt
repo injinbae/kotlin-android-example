@@ -1,4 +1,4 @@
-package com.ijb.nbt.firstkotlinproj.helper
+package com.ijb.nbt.kotlinchapter4.helper
 
 import android.text.TextUtils
 import android.widget.EditText
